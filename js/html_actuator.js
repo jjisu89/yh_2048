@@ -49,18 +49,20 @@ HTMLActuator.prototype.clearContainer = function (container) {
 var val2caption = function(val){
 
   const captions = [
-  "노래2", 
-  "노래4",
-  "노래8",
-  "노래16",
-  "노래32", 
-  "노래64",
-  "노래128",
-  "노래256",
-  "노래512",
-  "노래1024",
-  "노래2048",
-  "노래4096"];
+  "P.R.R.W", 
+  "나계있",
+  "오르트구름",
+  "물의여행",
+  "잘지내", 
+  "반짝빛을내",
+  "6년230일",
+  "Truly",
+  "별의조각",
+  "하나의달",
+  "Savior",
+  "END THEORY",
+  "윤하",
+  "홀릭스"];
 
   // if(val <= 0) return "<span style='font-size:smaller'>Garbage</span>";
   // if(val == 1){
