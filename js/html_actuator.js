@@ -60,9 +60,11 @@ var val2caption = function(val){
   "별의조각",
   "하나의달",
   "Savior",
-  "END THEORY",
+  "END",
+  "THEORY",
   "윤하",
-  "홀릭스"];
+  "홀릭스",
+  "END THEORY"];
 
   // if(val <= 0) return "<span style='font-size:smaller'>Garbage</span>";
   // if(val == 1){
