@@ -468,6 +468,13 @@ hr {
   float: right;
 }
 
+.change-caption-button {
+  @include button;
+  display: block;
+  text-align: center;
+  float: right;
+}
+
 .game-explanation {
   margin-top: 50px;
 }
