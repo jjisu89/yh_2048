@@ -1,10 +1,31 @@
-function HTMLActuator() {
+function HTMLActuator(input_captions='') {
   this.tileContainer    = document.querySelector(".tile-container");
   this.scoreContainer   = document.querySelector(".score-container");
   this.bestContainer    = document.querySelector(".best-container");
   this.messageContainer = document.querySelector(".game-message");
 
   this.score = 0;
+  if (input_captions!=''){
+    this.captions = input_captions.split(',')
+  } else {
+    this.captions = [
+      "P.R.R.W", 
+      "나계있",
+      "오르트구름",
+      "물의여행",
+      "잘지내", 
+      "반짝빛을내",
+      "6년230일",
+      "Truly",
+      "별의조각",
+      "하나의달",
+      "Savior",
+      "END",
+      "THEORY",
+      "윤하",
+      "홀릭스",
+      "END THEORY"];
+  }
 }
 
 HTMLActuator.prototype.actuate = function (grid, metadata) {
@@ -35,6 +56,13 @@ HTMLActuator.prototype.actuate = function (grid, metadata) {
   });
 };
 
+// HTMLActuator.prototype.changeCaption = function (newCaptions) {
+//   // this.clearMessage();
+//   alert(this.captions)
+//   this.captions = newCaptions.split(',');
+//   alert(this.captions)
+// };
+
 // Continues the game (both restart and keep playing)
 HTMLActuator.prototype.continueGame = function () {
   this.clearMessage();
@@ -46,25 +74,25 @@ HTMLActuator.prototype.clearContainer = function (container) {
   }
 };
 
-var val2caption = function(val){
+var val2caption = function(val, captions){
 
-  const captions = [
-  "P.R.R.W", 
-  "나계있",
-  "오르트구름",
-  "물의여행",
-  "잘지내", 
-  "반짝빛을내",
-  "6년230일",
-  "Truly",
-  "별의조각",
-  "하나의달",
-  "Savior",
-  "END",
-  "THEORY",
-  "윤하",
-  "홀릭스",
-  "END THEORY"];
+  // const captions = [
+  // "P.R.R.W", 
+  // "나계있",
+  // "오르트구름",
+  // "물의여행",
+  // "잘지내", 
+  // "반짝빛을내",
+  // "6년230일",
+  // "Truly",
+  // "별의조각",
+  // "하나의달",
+  // "Savior",
+  // "END",
+  // "THEORY",
+  // "윤하",
+  // "홀릭스",
+  // "END THEORY"];
 
   // if(val <= 0) return "<span style='font-size:smaller'>Garbage</span>";
   // if(val == 1){
@@ -103,7 +131,7 @@ HTMLActuator.prototype.addTile = function (tile) {
 
   inner.classList.add("tile-inner");
   // inner.textContent = tile.value;
-  inner.textContent = val2caption(tile.value);
+  inner.textContent = val2caption(tile.value, self.captions);
 
   if (tile.previousPosition) {
     // Make sure that the tile gets rendered in the previous position first

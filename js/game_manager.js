@@ -2,7 +2,13 @@ function GameManager(size, InputManager, Actuator, StorageManager) {
   this.size           = size; // Size of the grid
   this.inputManager   = new InputManager;
   this.storageManager = new StorageManager;
-  this.actuator       = new Actuator;
+  this.inputCaptions =  this.storageManager.getNewCaptions()
+  if (this.inputCaptions == null) {
+    this.inputCaptions = ''
+  }
+  // alert(this.inputCaptions)
+  // this.inputCaptions = ''
+  this.actuator       = new Actuator(this.inputCaptions);
 
   this.startTiles     = 2;
 
@@ -24,10 +30,13 @@ GameManager.prototype.restart = function () {
 
 // Change captions
 GameManager.prototype.changeCaption = function () {
-  var userName = prompt("변경하고 싶은 문구를 11개 넣으세요.(구분자는 쉼표)\n예시. 취준,인턴,사원,대리,과장,차장,부장,상무,전무,사장,회장", "취준,인턴,사원,대리,과장,차장,부장,상무,전무,사장,회장");
-  alert("ㅋㅋㅋㅋㅋ 게임을 새로 시작한다")
+  var newCaptions = prompt("변경하고 싶은 문구를 11개 넣으세요.(구분자는 쉼표)\n예시. 취준,인턴,사원,대리,과장,차장,부장,상무,전무,사장,회장", "취준,인턴,사원,대리,과장,차장,부장,상무,전무,사장,회장");
+  // alert("ㅋㅋㅋㅋㅋ 게임을 새로 시작한다")
   window.location.reload();
   this.storageManager.clearGameState();
+  this.storageManager.setNewCaptions(newCaptions);
+  // this.inputCaptions = newCaptions.split(',')
+  // this.actuator.changeCaption(newCaptions);
   this.actuator.continueGame(); // Clear the game won/lost message
   this.setup();
 };
