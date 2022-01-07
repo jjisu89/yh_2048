@@ -2,13 +2,12 @@ function GameManager(size, InputManager, Actuator, StorageManager) {
   this.size           = size; // Size of the grid
   this.inputManager   = new InputManager;
   this.storageManager = new StorageManager;
-  this.inputCaptions =  this.storageManager.getNewCaptions()
-  if (this.inputCaptions == null) {
-    this.inputCaptions = ''
-  }
-  // alert(this.inputCaptions)
-  // this.inputCaptions = ''
-  this.actuator       = new Actuator(this.inputCaptions);
+  this.actuator       = new Actuator();
+  // this.inputCaptions =  this.storageManager.getNewCaptions()
+  // if (this.inputCaptions == null) {
+  //   this.inputCaptions = ''
+  // }
+  // this.actuator       = new Actuator(this.inputCaptions);
 
   this.startTiles     = 2;
 
