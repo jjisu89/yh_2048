@@ -74,25 +74,25 @@ HTMLActuator.prototype.clearContainer = function (container) {
   }
 };
 
-var val2caption = function(val, captions){
+var val2caption = function(val){
 
-  // const captions = [
-  // "P.R.R.W", 
-  // "나계있",
-  // "오르트구름",
-  // "물의여행",
-  // "잘지내", 
-  // "반짝빛을내",
-  // "6년230일",
-  // "Truly",
-  // "별의조각",
-  // "하나의달",
-  // "Savior",
-  // "END",
-  // "THEORY",
-  // "윤하",
-  // "홀릭스",
-  // "END THEORY"];
+  const captions = [
+  "P.R.R.W", 
+  "나계있",
+  "오르트구름",
+  "물의여행",
+  "잘지내", 
+  "반짝빛을내",
+  "6년230일",
+  "Truly",
+  "별의조각",
+  "하나의달",
+  "Savior",
+  "END",
+  "THEORY",
+  "윤하",
+  "홀릭스",
+  "END THEORY"];
 
   // if(val <= 0) return "<span style='font-size:smaller'>Garbage</span>";
   // if(val == 1){
@@ -131,7 +131,8 @@ HTMLActuator.prototype.addTile = function (tile) {
 
   inner.classList.add("tile-inner");
   // inner.textContent = tile.value;
-  inner.textContent = val2caption(tile.value, self.captions);
+  // inner.textContent = val2caption(tile.value, self.captions);
+  inner.textContent = val2caption(tile.value);
 
   if (tile.previousPosition) {
     // Make sure that the tile gets rendered in the previous position first

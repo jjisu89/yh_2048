@@ -70,7 +70,7 @@ KeyboardInputManager.prototype.listen = function () {
 
   // Respond to button presses
   this.bindButtonPress(".retry-button", this.restart);
-  this.bindButtonPress(".change-caption-button", this.changeCaption);
+  // this.bindButtonPress(".change-caption-button", this.changeCaption);
   this.bindButtonPress(".restart-button", this.restart);
   this.bindButtonPress(".keep-playing-button", this.keepPlaying);
 
@@ -133,10 +133,10 @@ KeyboardInputManager.prototype.restart = function (event) {
   this.emit("restart");
 };
 
-KeyboardInputManager.prototype.changeCaption = function (event) {
-  event.preventDefault();
-  this.emit("changeCaption");
-};
+// KeyboardInputManager.prototype.changeCaption = function (event) {
+//   event.preventDefault();
+//   this.emit("changeCaption");
+// };
 
 KeyboardInputManager.prototype.keepPlaying = function (event) {
   event.preventDefault();
