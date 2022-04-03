@@ -9,17 +9,20 @@ function HTMLActuator(input_captions='') {
     this.captions = input_captions.split(',')
   } else {
     this.captions = [
-      "P.R.R.W", 
-      "나계있",
       "오르트구름",
+      "살별",
       "물의여행",
-      "잘지내", 
       "반짝빛을내",
       "6년230일",
+      "P.R.R.W", 
+      "나계있",
       "Truly",
       "별의조각",
       "하나의달",
+      "지평선",
+      "블랙홀",
       "Savior",
+      "잘지내", 
       "END",
       "THEORY",
       "윤하",
